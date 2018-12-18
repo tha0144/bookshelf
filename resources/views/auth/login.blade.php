@@ -10,13 +10,13 @@
             
             {!! Form::open(['route' => 'login.post']) !!}
             
-                <div class="form-group">
-                    {!! Form::label('name', 'ユーザー名') !!}
-                    {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
+                <div class="input-group">
+                    {!! Form::label('email', 'メールアドレス', ['class' => 'input-group-addon']) !!}
+                    {!! Form::email('email', old('email'), ['class' => 'form-control']) !!}
                 </div>
                 
-                <div class="form-group">
-                    {!! Form::label('password', 'パスワード') !!}
+                <div class="input-group">
+                    {!! Form::label('password', 'パスワード', ['class' => 'input-group-addon']) !!}
                     {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
                 
