@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'UsersController@show');
 
 // アカウント作成
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
@@ -32,9 +30,11 @@ Route::get('/about', function(){
 // 
 Route::group(['middleware' => ['auth']], function(){
     Route::resource('books', 'BooksController');
+    Route::resource('users', 'UsersController', ['only' => ['show']]);
 });
-//Route::get('search', 'BookController@simpleSearch');
-//Route::get('search', 'BookController@detailedSearch');
+//Route::get('search', 'BooksController@simpleSearch');
+//Route::get('search', 'BooksController@detailedSearch');
+//Route::get('books', 'BooksController@search')->name('books.search');
 
 Route::group(['middleware' => ['auth'], Auth::id() == 1], function(){
     Route::resource('categories', 'CategoriesController');

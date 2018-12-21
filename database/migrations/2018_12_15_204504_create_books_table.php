@@ -20,8 +20,8 @@ class CreateBooksTable extends Migration
             $table->string('publisher')->nullable();
             $table->integer('user_id')->unsigned()->index();
             $table->integer('category_id')->unsigned()->index();
-            $table->boolean('possession'); // 所持の有無
-            $table->boolean('is_open'); // 書籍データの公開/非公開
+            $table->integer('possession'); // 所持の有無：1->所持,2->非所持
+            $table->integer('is_open'); // 書籍データの公開/非公開：1->公開,2->非公開
             $table->string('comment')->nullable();
             $table->string('review')->nullable();
             $table->timestamps();

@@ -18,7 +18,6 @@ class CategoriesController extends Controller
     }
     
     public function show(){
-        
     }
     
     // 新規カテゴリー作成
