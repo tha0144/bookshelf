@@ -4,15 +4,19 @@
     <tr>
         <td>
             <div>
-                <span style="font-size: 16px; font-weight: bold;">
-                {{ $book->title }}
-                </span>
                 @if($book->user_id === \Auth::id())
+                    <span style="font-size: 16px; font-weight: bold;">
+                    {!! link_to_route('books.edit', $book->title, ['id' => $book->id]) !!}
+                    </span>
                     @if($book->possession == 1)
                         <span class="label label-success">所持</span>
                     @else
                         <span class="label label-warning">未所持</span>
                     @endif
+                @else
+                    <span style="font-size: 16px; font-weight: bold;">
+                    {{ $book->title }}
+                    </span>
                 @endif
             </div>
             @if($book->author != null)

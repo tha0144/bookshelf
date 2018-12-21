@@ -1,12 +1,11 @@
 @extends('layouts')
 
 @section('content')
-    <div class="tect-center">
-        <h1>ログイン</h1>
-    </div>
     
     <div class="row">
         <div class="col-md-6 col-md-offset-2">
+            
+            <h1>ログイン</h1>
             
             {!! Form::open(['route' => 'login.post']) !!}
             

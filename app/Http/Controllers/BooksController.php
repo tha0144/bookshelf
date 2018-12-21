@@ -73,15 +73,26 @@ class BooksController extends Controller
     }
     
     // 
-    public function update(Request $request){
+    public function update(Request $request, $id){
         $this->validate($request, [
             'title' => 'required|max:191',
             'author' => 'max:191',
             'publisher' => 'max:191',
             'category_id' => 'required',
+            'comment' => 'max:191',
+            'review' => 'max:191',
         ]);
         
-        $book = Book::find($id);
+        $request->user()->books()->updateOrCreate(['id' => $id], [
+            'title' => $request->title,
+            'author' => $request->author,
+            'publisher' => $request->publisher,
+            'category_id' => $request->category_id,
+            'is_open' => $request->is_open,
+            'possession' => $request->possession,
+            'comment' => $request->comment,
+            'review' => $request->review,
+        ]);
         
         return redirect('/');
     }
