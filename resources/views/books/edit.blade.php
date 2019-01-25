@@ -8,45 +8,45 @@
             
             {!! Form::model($book, ['route' => ['books.update', $book->id], 'method' => 'put']) !!}
                 
-                <div class="input-group">
-                    {!! Form::label('title', '書籍名', ['class' => 'input-group-addon']) !!}
+                <div class="form-group">
+                    {!! Form::label('title', '書籍名', ['class' => 'form-group-addon']) !!}
                     {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => '必ず入力してください']) !!}
                 </div>
                 
-                <div class="input-group">
-                    {!! Form::label('author', '著者名', ['class' => 'input-group-addon']) !!}
+                <div class="form-group">
+                    {!! Form::label('author', '著者名', ['class' => 'form-group-addon']) !!}
                     {!! Form::text('author', null, ['class' => 'form-control']) !!}
                 </div>
                 
-                <div class="input-group">
-                    {!! Form::label('publisher', '出版社名', ['class' => 'input-group-addon']) !!}
+                <div class="form-group">
+                    {!! Form::label('publisher', '出版社名', ['class' => 'form-group-addon']) !!}
                     {!! Form::text('publisher', null, ['class' => 'form-control']) !!}
                 </div>
                 
-                <div class="input-group">
-                    {!! Form::label('category_id', 'カテゴリー', ['class' => 'input-group-addon']) !!}
+                <div class="form-group">
+                    {!! Form::label('category_id', 'カテゴリー', ['class' => 'form-group-addon']) !!}
                     {!! Form::select('category_id', $category_list, null, ['class' => '', 'style' => 'font-size: 16px; width: 100px;']) !!}
                 </div>
                 
-                <div class="input-group">
-                    {!! Form::label('is_open', '公開設定', ['class' => 'input-group-addon']) !!}
+                <div class="form-group">
+                    {!! Form::label('is_open', '公開設定', ['class' => 'form-group-addon']) !!}
                     {!! Form::radio('is_open', 1, true) !!}公開　　
                     {!! Form::radio('is_open', 2) !!}非公開
                 </div>
                 
-                <div class="input-group">
-                    {!! Form::label('possession', '所持', ['class' => 'input-group-addon']) !!}
+                <div class="form-group">
+                    {!! Form::label('possession', '所持', ['class' => 'form-group-addon']) !!}
                     {!! Form::radio('possession', 1, true) !!}所持　　
                     {!! Form::radio('possession', 2) !!}非所持
                 </div>
                 
-                <div class="input-group">
-                    {!! Form::label('comment', 'コメント', ['class' => 'input-group-addon']) !!}
+                <div class="form-group">
+                    {!! Form::label('comment', 'コメント', ['class' => 'form-group-addon']) !!}
                     {!! Form::textarea('commnet', old('comment'), ['class' => 'form-control', 'rows' => '2']) !!}
                 </div>
                 
-                <div class="input-group">
-                    {!! Form::label('review', '書評', ['class' => 'input-group-addon']) !!}
+                <div class="form-group">
+                    {!! Form::label('review', '書評', ['class' => 'form-group-addon']) !!}
                     {!! Form::textarea('review', old('review'), ['class' => 'form-control', 'rows' => '2']) !!}
                 </div>
                 
