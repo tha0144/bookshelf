@@ -27,14 +27,20 @@ Route::get('/about', function(){
     return view('about');
 });
 
+// 検索窓
+Route::get('/search', function(){
+    return view('common.search');
+});
+// 検索結果表示
+Route::post('/result', 'BooksController@search');
+
 // 
 Route::group(['middleware' => ['auth']], function(){
-    Route::resource('books', 'BooksController');
+    Route::resource('books', 'BooksController', ['only' => ['show', 'create', 'store', 'edit', 'update', 'destroy']]);
     Route::resource('users', 'UsersController', ['only' => ['show']]);
 });
 //Route::get('search', 'BooksController@simpleSearch');
 //Route::get('search', 'BooksController@detailedSearch');
-//Route::get('books', 'BooksController@search')->name('books.search');
 
 Route::group(['middleware' => ['auth'], Auth::id() == 1], function(){
     Route::resource('categories', 'CategoriesController');

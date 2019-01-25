@@ -13,7 +13,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="/about">電脳本棚について</a></li>
-                    <li><a href="#">書籍を検索</a></li>
+                    <li><a href="/search">書籍を検索</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if(Auth::check())

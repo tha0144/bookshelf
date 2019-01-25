@@ -23,6 +23,7 @@
         </div>
         
         <script type="text/javascript">
+            /*
             var max_length = 0;
             var all_labels = document.getElementsByTagName('label');
             for(var i = 0; i < all_labels.length; i++){
@@ -33,6 +34,7 @@
             for(var i = 0; i < all_labels.length; i++){
                 all_labels[i].style.width = max_length + 'px';
             }
+            */
         </script>
     </body>
 </html>
