@@ -109,36 +109,10 @@ class BooksController extends Controller
         // 公開設定のデータを取得
         $books = Book::where('is_open', true);
         
-        // 
-        $title = $request->input('title');
-        $author = $request->input('author');
-        $publisher = $request->input('publisher');
-        // $title = $request->input('title');
-        
-        // タイトルでの検索
-        if(!empty($title)){
-            $books->where('title', 'like', '%'.$title.'%');
-        }
-        // 著者名での検索
-        if(!empty($author)){
-            $books->where('author', 'like', '%'.$author.'%');
-        }
-        // 出版社での検索
-        if(!empty($publisher)){
-            $books->where('publisher', 'like', '%'.$publisher.'%');
-        }
-        /*
-        // 
-        if($request->xxx != undefined){
-            $books->where('xxx', 'like', '%'.$xxx.'%');
-        }
-        */
-        /*
         // https://qiita.com/Ioan/items/a61ad1fe24529c2477e9にあった書き方
         foreach($request->only(['title', 'author', 'publisher']) as $key => $value){
             $books->where($key, 'like', '%'.$value.'%');
         }
-        */
         
         $books = $books->paginate(10);
         

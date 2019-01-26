@@ -5,8 +5,8 @@
     {!! Form::open(['url' => '/result', 'method' => 'post']) !!}
         
         <div class="form-group">
-            {!! Form::label('name', '書籍名', ['class' => 'form-group-addon']) !!}
-            {!! Form::text('name', null, ['class' => 'form-control']) !!}
+            {!! Form::label('title', '書籍名', ['class' => 'form-group-addon']) !!}
+            {!! Form::text('title', null, ['class' => 'form-control']) !!}
         </div>
         
         <div class="form-group">
